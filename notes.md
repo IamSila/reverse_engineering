@@ -56,9 +56,12 @@ bytes near msb   -           high order bytes         low order bytes - bytes ne
 - add [0x12345678], [0x87654321] --> this assembly syntax is wrong coz it accesses two memory locations at the same time.
 
 arithmetic mnemonics
-add --> add destination, value ---> destination + value ---> result in destination
+add --> add destination, value ---> destination + value ---> result in destination. Size of the two operands must be same: 32 bit and 32 bit.
 sub ---> same as addition above just that we are subtracting this time.
-mul
+mul ---> The syntax of a mul operation is ```mul operand```, where operand
+can be a register or memory address. The operation multiplies the value stored
+in eax with the value specified in the operand.
+The results are stored in edx:eax with edx containing the high 32 bits of the result.
 inc
 dec
 
