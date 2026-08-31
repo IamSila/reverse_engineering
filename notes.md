@@ -17,4 +17,41 @@
 bytes near msb   -           high order bytes         low order bytes - bytes near lsb
 
 - Endianness: The order in which these bytes are stored in memory. In a little-endian system, the least significant byte is stored first (at the lowest address). In a big-endian system, the most significant byte is stored first (at the lowest address).
+- In a little-endian system, the least significant byte is located at the smallest address. In a big-endian system, the most significant byte is at the smallest address.
+
+
+# Registers
+- Divided into two:
+    i) General Purpose Registers - Used for general storing data, addresses,etc., and are directly manipulable
+        eax: eax is the “accumulator” register. Its name comes from the fact that it is commonly used to hold the result of an arithmetic operation.
+        ebx: ebx is the “base” register. It is commonly used to hold the base address of the chunk of memory used to store a variable. For example, the expression
+        ecx: ecx is the “counter” register and is traditionally used to count. For example,ecx might be used to track the current iteration of a loop. In the command for (i=0; i<10; i++), the variable i is likely to be stored in the ecx register.
+[ebx + 5] can be used to access the fifth element of an array.
+        edx: edx is the “data” register. It's name comes from the fact that it is commonly used to hold data. For example, an application may include the instruction sub edx, 7.
+        esi: esi is the “source index” register. It is traditionally used to store an index into a source array. For example, in the command array[i] = array[k], the value of k would likely be stored in esi.
+        edi: edi is the “destination index” register. It is used to store an index into a destination array. For example, in the command array[i] = array[k], the value of i would likely be stored in edi.
+        ebp: ebp is the “base pointer” register. Its purpose is to store the address of the base of the current stack frame.
+        esp: esp is the “stack pointer” register. It stores the address at the top of the current stack frame.
+    ii) Special purpose registers. - Used to store the program state.
+
+
+# working with registers.
+- e.g How do you break a register i.e eax into ax and further that ax into al and ah.
+
+
+# Memory Access
+- Intel syntax uses [] notation and AT&T syntax uses () notation. E.g [0x12345678] to access the data in that memory.
+
+
+# addressing modes
+- absolute addressing modes
+- Base + displacement addressing modes
+- index based addressing mode.
+- based-indexed addressing mode.
+
+
+
+# Assembly instructions
+- Operands can be registers, immediate values or memory addresses.
+- add [0x12345678], [0x87654321] --> this assembly syntax is wrong coz it accesses two memory locations at the same time.
 
