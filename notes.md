@@ -113,6 +113,12 @@ NB: Zero-extending a right-shifted value will fill empty bits with zeros and is 
 
 sar and sal
 - are arithmetic shift operators.
-- 
+- they fill the shifted bits with the most significant bit.
+
+
+reference point for assembly mnemonics 
+http://ref.x86asm.net/coder32.html
+
+
 
 
