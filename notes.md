@@ -93,11 +93,26 @@ test
 other
 lea
 nop
+- stands for no operation.
+- While nop technically does nothing, it is used for a variety of legitimate purposes, including the following:
+    Timing
+    Memory alignment
+    Hazard prevention
+    Branch delay slot (RISC architectures)
+    A placeholder to be replaced later by a future patch
+And in the security world it is used for the following:
+    Hacking (nop sleds)
+    Cracking (nop outs)
 
 shr and shl
 shr and shl are logical shift operators. This means that when shifting the
 value by the indicated immediate value, they will zero-extend the value to the
 left or right.
 
+NB: Zero-extending a right-shifted value will fill empty bits with zeros and is called a logical shift. Sign-extending a right-shifted value will fill empty bits with the same value as the most significant bit and is called an arithmetic shift.
+
+sar and sal
+- are arithmetic shift operators.
+- 
 
 
