@@ -55,3 +55,40 @@ bytes near msb   -           high order bytes         low order bytes - bytes ne
 - Operands can be registers, immediate values or memory addresses.
 - add [0x12345678], [0x87654321] --> this assembly syntax is wrong coz it accesses two memory locations at the same time.
 
+arithmetic mnemonics
+add
+sub
+mul
+inc
+dec
+
+bit manipulation
+and
+or
+xor
+not
+
+stack
+call
+pop
+return
+push
+
+
+data movement
+mov
+
+execution flow
+jmp
+conditional jump
+
+comparison
+cmp
+test
+
+other
+lea
+nop
+
+
+
