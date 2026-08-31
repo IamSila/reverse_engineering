@@ -8,7 +8,7 @@
 - byte: 8 bits
 - word: 2 bytes or 16 bits.
 - Double word: 4 bytes or 32 bits.
-- Quard word: 8 byts or 64 bits.
+- Quad word: 8 bytes or 64 bits.
 
 
 # Important terms to understand in reverse_engineering
@@ -119,6 +119,9 @@ sar and sal
 reference point for assembly mnemonics 
 http://ref.x86asm.net/coder32.html
 
+
+
+# Building and running assembly programs.
 
 
 
