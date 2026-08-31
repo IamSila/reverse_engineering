@@ -56,8 +56,8 @@ bytes near msb   -           high order bytes         low order bytes - bytes ne
 - add [0x12345678], [0x87654321] --> this assembly syntax is wrong coz it accesses two memory locations at the same time.
 
 arithmetic mnemonics
-add
-sub
+add --> add destination, value ---> destination + value ---> result in destination
+sub ---> same as addition above just that we are subtracting this time.
 mul
 inc
 dec
@@ -76,7 +76,7 @@ push
 
 
 data movement
-mov
+mov - does not move data. It compies data.
 
 execution flow
 jmp
