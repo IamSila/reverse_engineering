@@ -62,6 +62,7 @@ mul ---> The syntax of a mul operation is ```mul operand```, where operand
 can be a register or memory address. The operation multiplies the value stored
 in eax with the value specified in the operand.
 The results are stored in edx:eax with edx containing the high 32 bits of the result.
+div ---> quotient is stored in eax and the reminder is stored in edx. High 32 bits are in edx and low 32 bits are in eax. e.g div eax is equivalent to eax, edx = eax:edx / eax.
 inc
 dec
 
@@ -92,6 +93,11 @@ test
 other
 lea
 nop
+
+shr and shl
+shr and shl are logical shift operators. This means that when shifting the
+value by the indicated immediate value, they will zero-extend the value to the
+left or right.
 
 
 
