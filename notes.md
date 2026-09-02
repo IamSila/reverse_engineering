@@ -128,7 +128,20 @@ http://ref.x86asm.net/coder32.html
 
 
 # Understanding condtion codes.
-- when we want to track the condition in an if statement, there are special registers which 
+- when we want to track the condition in an if statement, there are special register which store this information. It is called flags.
+- In x32 systems this is called eflags.
+- In 16 bits they are called flags.
+- In 64 bit systems they are called rflags.
+
+
+eflags
+- contains different flags which are a single bit each. Each flag can be set to either true or false.
+- There are different flags:
+  - status flag. - show status of operations e.g whether the previous operations completed successfully.
+  - control flag. - controls how the processor operates. Such as enabling and disabling interupts.
+  - system flags - contain the state of the processor. e.g whether the system is virtualised.
+
+
 
 
 
