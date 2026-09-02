@@ -142,7 +142,27 @@ eflags
   - system flags - contain the state of the processor. e.g whether the system is virtualised.
 
 
+status flags.
+carry flag.
+- is at bit 0 of the eflag register.
+- specifies whether the last operation resulted in a carry.
+zero flag.
+- is at bit 6 of the eflag register.
+- indicates whether the last arithmetic operation resulted in a zero.
+- if the result is a zero the flag is set to a 1.
+sign flag.
+- Found at the seventh flag of the eflag.
+- Specifies whether a sign bit was set for the previous arithmetic operation.
+- If the bit is set it is negative, if it is not set, it is positive.
+overflow flag.
+- Is the 11th flag of the eflag.
+- the overflow flag is used for signed math to detect when something didn’t go right.
+- Often, this indicates one of two cases:
+  Positive + Positive = Negative
+  Negative + Negative = Positive
 
+
+# Analysing and debugging assembly code.
 
 
 
