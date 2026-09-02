@@ -163,10 +163,19 @@ overflow flag.
 
 
 # Analysing and debugging assembly code.
+Binary Analysis.
+- Can be done in different ways:
+    static analysis - analysing the source code without ever running it.
+    dynamic analysis - running the program and analysing its behaviour when it is running.
+    debugging - 
 
-
-
-
+debug flow
+  1. Set breakpoints on points of interest.
+  2. Run the code.
+  3. The execution pauses (“breaks”) at the breakpoint.
+  4. Examine the program state.
+  5. Optionally make modifications.
+  6. Repeat.
 
 
 
