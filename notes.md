@@ -127,6 +127,11 @@ http://ref.x86asm.net/coder32.html
 
 
 
+# Understanding condtion codes.
+- when we want to track the condition in an if statement, there are special registers which 
+
+
+
 
 
 
