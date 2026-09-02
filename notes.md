@@ -177,5 +177,10 @@ debug flow
   5. Optionally make modifications.
   6. Repeat.
 
+- There are hardware and software debuggers.
+- H/W breakpoints are stored in DR 0-7 which is the debugger registers.
+- dr 0-4 stores the breakpoint addresses while 6 and 7 stores the configuration info.
+
+
 
 
