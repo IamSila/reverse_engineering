@@ -122,6 +122,13 @@ http://ref.x86asm.net/coder32.html
 
 
 # Building and running assembly programs.
+- ASCII and UTF8 are encoding schemes which determines how data is represented in computers.
+- More practice needed here.
+
+
+
+
+
 
 
 
