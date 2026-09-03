@@ -182,5 +182,16 @@ debug flow
 - dr 0-4 stores the breakpoint addresses while 6 and 7 stores the configuration info.
 
 
+the gnu debugger
+- commandline, it is scriptable and has remote debugging support.
+
+debugging with gdb
+e.g gdb a.out ----> to open a binary in gbb 
+(gdb) set disassembler-flavour intel -----> to set the syntax to intel flavour.
+(gdb)  disassemble  ----> starts disassembling at the current instruction 
+(gdb) disassemble <address>  -----> starts disassembling at the current instruction.
+(gdb) disassemble <label name>  -----> start disassembling at the current label.
+(gdb) disassemble <label name> + <const number>    ----> start disassembling at <lable name> and print <const number> of lines.
+
 
 
