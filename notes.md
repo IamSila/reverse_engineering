@@ -189,6 +189,9 @@ debugging with gdb -- getting started.
 e.g gdb a.out ----> to open a binary in gbb 
 (gdb) set disassembler-flavour intel -----> to set the syntax to intel flavour.
 (gdb) disassemble  ----> starts disassembling at the current instruction 
+
+
+
 (gdb) disassemble <address>  -----> starts disassembling at the current instruction.
 (gdb) disassemble <label name>  -----> start disassembling at the current label.
 (gdb) disassemble <label name> + <const number>    ----> start disassembling at <lable name> and print <const number> instructions.
@@ -200,9 +203,72 @@ starting and stopping code in gdb
 (gdb) quit and kill ----> is used to quit program execution; kill terminates the running process; quit exits gdb
 
 
+gdb breakpoints.
+(gdb) break <address>  ----> introduces a breakpoint at a specified address
+(gdb) break <label>  ----> introduces a breakpoint at the desired address
+
+
+gdb info commands
+(gdb) info files  -----> shows information about the various parts of the disassembled file.
+(gdb) info breakpoints ----> show info about the currently set breakpoints of the disassembled program.
+(gdb) info register ----> shows the values of the x86 registers.
+(gdb) info variables  ----> shows all the defined variables in the program.
+(gdb) print $reg  ----> displays information about a specific register.
+(gdb) 
+
+
+gdb : stepping through instructions
+(gdb) stepi   ----> steps one instruction at a time
+(gdb) nexti  ------> step over a fxn without jumping into its internals if you already understand.
 
 
 
+```
+```
+If the next instruction to execute is a function call, stepi will follow the call
+into the called function. In many cases, this is undesirable, especially if the
+function is well-­understood. For example, knowing that an instruction will print
+a string is enough information, and there is no need to inspect each instruction
+within the printf function.
+The nexti command makes it possible to step over a function call. This will
+execute the function call and advance to the next visible instruction.
+
+
+gdb examining memory
+(gdb) x/nfu <address>  -----> Command used to examine memory. In full it mean eXamining memory
+    n f and u are optional params with the following meanings:
+    n -> specifies the number of units (u) of memory that should be displayed.
+    f -> displays the display format.
+        s -> Null terminated string.
+        i -> Machine instruction 
+        x -> Hexadecimal (default value)
+    u -> The unit size.
+        b -> Byte
+        h -> Halfwords (2 bytes).
+        w -> word (default size)
+        g -> giant words (8 bytes)
+
+example:
+(gdb) x/16x 0x123
+we can also use register with the x command: Example...
+(gdb) x/16x $esp   ----> display 16 bytes in hex for the dump located at register esp
+
+segmentation faults.
+when do they occur: When the cpu attempts to read or write a memory that is inaccessible.
+e.g mov eax, [0x0000000] will always lead to seg fault because the location at that memory location cannot be accessed by any other application or process.
+
+'''
+Segfaults can occur for a variety of different reasons. When exploiting software,
+a buffer overflow can cause a segfault. When cracking software, segfaults can
+happen if a program is incorrectly patched or errors are made when modifying
+execution during debugging. As you start to get into writing and manipulating
+assembly code, you will become good friends with segfault. Keeping a stress
+ball nearby that you use every time you see a segfault can be therapeutic when
+cracking. As a silver lining, when hooked to GDB, as a segfault occurs, gdb will
+show the line that caused it, which is helpful for tracking down where the code
+went haywire.
+
+'''
 
 
 
