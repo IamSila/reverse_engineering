@@ -270,7 +270,27 @@ went haywire.
 
 '''
 
+# Functions and control flow
+- eip: Instruction pointer register which holds the address of the next instruction to be executed.
+eip is a special purpose register and thus cannot be modified directly. The jump instructions are used to change the value which the eip is pointing to.
 
+- syntax for jump: jmp <op> where op can be a memory location or a label.
+
+- The jmp instruction has the syntax jmp op. Its purpose is to transfer the program’s control flow to the memory location op by setting eip to the value stored in op.
+
+
+some examples of jmp instruction and their meaning.
+  jmp eax  ; Copies eax into eip (branches to eax)
+  jmp $    ;An infinite loop in nasm(valuable ;debugging tool in assembly)
+  jmp label    ; Branches into the instruction at label.
+
+
+example 2:
+cmp eax, ebx     ; this will take values in ebx - eax
+jle done 
+
+The jle (jump less than or equal to) instruction will jump to the specified address or label if the flags register indicates that a previous comparison resulted in a less than or equal to. In this case, the instruction right before it (cmp) is being
+used to compare eax and ebx and set the flags.
 
 
 
