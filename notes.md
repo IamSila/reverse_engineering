@@ -290,8 +290,23 @@ cmp eax, ebx     ; this will take values in ebx - eax
 jle done 
 
 The jle (jump less than or equal to) instruction will jump to the specified address or label if the flags register indicates that a previous comparison resulted in a less than or equal to. In this case, the instruction right before it (cmp) is being
-used to compare eax and ebx and set the flags.
+used to compare eax and ebx and set the flags. Depending on the results, the processor will jump to the label done.
 
+je                  Jump if equal.                              ZF = 1
+jz                  Jump if last result is zero.                ZF = 1
+jne                 Jump if not equal.                          ZF = 0
+jge                 Jump if greater than or equal to.           SF = OF
+jl                  Jump if less than.                          SF != OF
+jle                 Jump if less than or equal to.              ZF = 1 OR SF != OF
+jg                  Jump if greater than.                       ZF = 0 AND SF == OF
+
+
+- je and jz can be used interchangeably but will depend with the operation being performed. For example,
+
+sub eax, ebx
+
+we might use the jz because it performs a jump if the result of the previous instruction resulted to a zero. 
+But if we are using je, (which jumps if the operation was equal, in that the zero flag will be set to 1), we could have performed an operation such as cmp eax, ebx before using je.
 
 
 
