@@ -309,6 +309,16 @@ we might use the jz because it performs a jump if the result of the previous ins
 But if we are using je, (which jumps if the operation was equal, in that the zero flag will be set to 1), we could have performed an operation such as cmp eax, ebx before using je.
 
 
+# logic constructs in x86
+  
+
+# the stack in assembly
+- stack pointer - indicates the top of the stack.
+- push: pushes a value to the top of the stack. A stack pointer will point to this value.
+- pop: A pop will move the value at the top of the stack into a register or memory address and update the stack pointer
+to indicate the value below it, which is the new top of the stack (taking the top piece of paper off the stack).
+
+
 
 
 
