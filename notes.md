@@ -329,6 +329,22 @@ syntax: pop <destination>
 - When a push is performed, the stack pointer, esp, is automatically decremented by 4 to indicate the new top of the stack. Then, the value being pushed to the stack is placed at this location.
 
 
+# Functions in x86.
+- <call> and <return> make assembly resemble high level languages.
+
+call instructions.
+syntax: call <op> where op is the memory address of the function being called. It can be a register, label or memory address.
+
+    call eax      ; branch to eax
+    call label    ; branch to label
+    call 0x1000   ; branch to 0x1000
+
+Like push and pop, call actually bundles multiple steps into a single operation. First, it creates a return address by pushing the address of the next instruction onto the stack. Then, it performs an unconditional jump to the code location indicated by op.
+
+return instruction.
+- The ret instruction accepts no arguments. Its purpose is to return execution to the calling function.
+
+
 
 
 
