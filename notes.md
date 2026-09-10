@@ -318,6 +318,16 @@ But if we are using je, (which jumps if the operation was equal, in that the zer
 - pop: A pop will move the value at the top of the stack into a register or memory address and update the stack pointer
 to indicate the value below it, which is the new top of the stack (taking the top piece of paper off the stack).
 
+push and pop instructions.
+- Push: adds 4bytes or one dword into the stack. It takes a single argument that can be a register, a memory address or a const.
+
+-pop: removes one dword from the stack and stores it in a memory location or a register.
+syntax: pop <destination>
+
+- The pop instruction reverses the operations performed by push. It starts by moving the value stored at [esp] into the indicated register or memory location. Then, it automatically increments esp by 4 to point to the new top of the stack.
+
+- When a push is performed, the stack pointer, esp, is automatically decremented by 4 to indicate the new top of the stack. Then, the value being pushed to the stack is placed at this location.
+
 
 
 
